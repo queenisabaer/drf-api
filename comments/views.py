@@ -7,7 +7,7 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     # Instead of specifying only the model to use, in DRF we set the queryset attribute
-    #T his way, it is possible to filter out some of the model instances.(e.g. sensible data)
+    # This way, it is possible to filter out some of the model instances.(e.g. sensible data)
     queryset = Comment.objects.all()
 
     def perform_create(self, serializers):
